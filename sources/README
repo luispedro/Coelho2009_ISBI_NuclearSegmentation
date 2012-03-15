@@ -1,0 +1,14 @@
+Code for paper
+
+    "NUCLEI SEGMENTATION IN MICROSCOPE CELL IMAGES: A HAND-SEGMENTED DATASET AND COMPARISON OF ALGORITHMS" by 
+        Luis Pedro Coelho, Aabid Shariff, and Robert F. Murphy
+    in ISBI 2009
+
+How to reproduce table 2 in the paper:
+---------------------------------------
+
+1. run ./buildall.sh
+2. run ./computeresults.sh
+3. run ./printresults.sh
+
+
