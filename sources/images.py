@@ -24,6 +24,7 @@
 
 from __future__ import division
 import pyslic
+from imread import imread
 import tempfile
 import os.path
 from os import system
@@ -39,12 +40,11 @@ def readxcf(xcffilename):
 
     Returns a numpy array with the (flattened) XCF file.
     '''
+    from os import unlink
     print 'readxcf(%s)' % xcffilename
     N=tempfile.NamedTemporaryFile(suffix='.png')
     system('xcf2png %s >%s' % (xcffilename,N.name))
-    blob=N.read()
-    N.close()
-    return readimgfromblob(blob)
+    return imread(N.name)
 
 def getborders(img):
     return (img[:,:,0] > img[:,:,1])
@@ -62,7 +62,7 @@ def _load_directory(pattern, stoplist):
     for f in files:
         if extract_number(f) in stoplist: continue
         img = pyslic.Image()
-        img.channels[img.dna_channel] = f
+        img.channels['dna'] = f
         imgs.append(img)
     return imgs
 
@@ -89,7 +89,7 @@ def load_ref(col,id):
     if type(id) == int:
         assert col in ('gnf','ic100')
         path = ('../data/images/segmented-lpc/%s/dna-%s.png' % (col,id))
-        reader = pyslic.readimg
+        reader = imread
         if not os.path.exists(path):
             path = ('../data/images/segmented-lpc/%s/dna-%s.xcf' % (col,id))
             reader = readxcf
@@ -113,8 +113,9 @@ def _process_B(B):
 
 
 def load_aabid(col,id):
+    from readmagick import readimg
     id = ('../data/images/segmented-ashariff/%s/dna-%s.psd' % (col,id))
-    I = pyslic.readimg(id)
+    I = readimg(id)
     B = (I[:,:,0] > I[:,:,1])
     return _process_B(B)
 

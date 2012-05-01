@@ -29,7 +29,7 @@ import numpy as np
 from scipy import ndimage
 import pyslic
 import pymorph
-import morph
+from mahotas import morph
 
 segment_watershed = TaskGenerator(pyslic.segmentation.watershed.watershed_segment)
 
