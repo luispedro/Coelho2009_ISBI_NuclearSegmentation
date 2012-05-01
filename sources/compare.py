@@ -144,6 +144,11 @@ def print_results(refs,ic100_ref,name,rands,jaccards,distances,basics):
         return np.mean(ds) 
     dists = np.array([_g(d[0],1.) for d in distances])
     haus = np.array([_g(d[1],128.) for d in distances])
+    try:
+        from os import mkdir
+        mkdir('results')
+    except:
+        pass
     outf = file('results/%s.txt' % name,'w')
     print >>outf, 'Rand (IC100:%s):' % name, np.mean([rands[i] for i in xrange(len(ic100_ref))]) 
     print >>outf, 'Rand (GNF:%s):' % name, np.mean([rands[i] for i in xrange(len(ic100_ref),len(refs))]) 
