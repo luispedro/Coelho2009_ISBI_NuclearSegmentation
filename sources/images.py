@@ -32,7 +32,6 @@ import pymorph
 from glob import glob
 from scipy import ndimage
 from jug.task import Task
-from readmagick import readimgfromblob
 
 def readxcf(xcffilename):
     '''
