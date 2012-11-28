@@ -7,6 +7,7 @@ Murphy
 Digital Object Identifier: `10.1109/ISBI.2009.5193098
 <http://dx.doi.org/10.1109/ISBI.2009.5193098>`__
 
+Open access `PubMed Central version <http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901896/>`__.
 
 Full citation (use this if you use this code/dataset in a paper)::
 
