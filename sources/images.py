@@ -23,12 +23,10 @@
 # send email to murphy@cmu.edu
 
 from __future__ import division
-import pyslic
 from imread import imread
 import tempfile
 import os.path
 from os import system
-import pymorph
 from glob import glob
 from scipy import ndimage
 from jug.task import Task
@@ -50,6 +48,7 @@ def getborders(img):
 
 
 def _load_directory(pattern, stoplist):
+    import pyslic
     imgs = []
     files = glob(pattern)
     def extract_number(path):
