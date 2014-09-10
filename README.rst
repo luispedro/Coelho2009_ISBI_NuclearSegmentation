@@ -1,13 +1,21 @@
 This is the source code & data for the paper
 
-*Nuclear segmentation in microscope cell images: A hand-segmented dataset and
-comparison of algorithms* by Luis Pedro Coelho, Aabid Shariff, and Robert F.
-Murphy
+    *Nuclear segmentation in microscope cell images: A hand-segmented dataset
+    and comparison of algorithms* by Luis Pedro Coelho, Aabid Shariff, and
+    Robert F.  Murphy.  DOI: `10.1109/ISBI.2009.5193098
+    <http://dx.doi.org/10.1109/ISBI.2009.5193098>`__ `PubMed Central (open
+    access) <http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901896/>`__.
 
-Digital Object Identifier: `10.1109/ISBI.2009.5193098
-<http://dx.doi.org/10.1109/ISBI.2009.5193098>`__
+Data
+----
 
-Open access `PubMed Central version <http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901896/>`__.
+Original data is in the ``data/`` directory. These were the files that were manually generated.
+
+The script ``extract-data.py`` may be helpful in preprocessing the images to an
+easier to process format you just want to get the data.
+
+Citation
+--------
 
 Full citation (use this if you use this code/dataset in a paper)::
 
