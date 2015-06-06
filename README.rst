@@ -9,10 +9,12 @@ This is the source code & data for the paper
 Data
 ----
 
-Original data is in the ``data/`` directory. These were the files that were manually generated.
+Original data is in the ``data/`` directory. The two subfolders ``gnf`` and
+``ic100`` contain the files that were manually generated. In the subfolder
+``preprocessed-data``, you will a processed version which may be easier to use.
 
-The script ``extract-data.py`` may be helpful in preprocessing the images to an
-easier to process format you just want to get the data.
+These are labeled integer images: the value 0 corresponds to the background, 1
+is the first cell, 2 the second cell, &c.
 
 Citation
 --------

@@ -37,12 +37,12 @@ def as_labeled(fname):
 ic100 = glob('data/images/segmented-lpc/ic100/dna-*.xcf')
 gnf = glob('data/images/segmented-lpc/gnf/dna-*.xcf')
 
-mkdir('preprocessed-data/')
-mkdir('preprocessed-data/ic100')
-mkdir('preprocessed-data/gnf')
+mkdir('data/preprocessed-data/')
+mkdir('data/preprocessed-data/ic100')
+mkdir('data/preprocessed-data/gnf')
 for fpath in chain(ic100, gnf):
-    ofile = fpath.replace('data/images/segmented-lpc/', 'preprocessed-data/') \
+    ofile = fpath.replace('data/images/segmented-lpc/', 'data/preprocessed-data/') \
             .replace('.xcf','.png')
     mh.imsave(ofile, as_labeled(fpath))
 
-print('Data is now available inside the directory preprocessed-data/ in PNG format')
+print('Data is now available inside the directory data/preprocessed-data/ in PNG format')
